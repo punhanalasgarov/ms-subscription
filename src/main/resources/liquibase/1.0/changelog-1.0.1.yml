@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create shedlock table
+      author: Punhan Alasgarov
+      changes:
+        - createTable:
+            tableName: shedlock
+            columns:
+              - column:
+                  name: name
+                  type: varchar(64)
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: shedlock_pk
+                    nullable: false
+              - column:
+                  name: lock_until
+                  type: timestamp
+                  constraints:
+                    notNull: true
+              - column:
+                  name: locked_at
+                  type: timestamp
+              - column:
+                  name: locked_by
+                  type: varchar(255)
+              - createIndex:
+                  indexName: idx_shedlock_name
+                  tableName: shedlock
+                  columns:
+                    - column:
+                        name: name
+
+

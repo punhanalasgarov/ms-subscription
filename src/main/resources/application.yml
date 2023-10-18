@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/subscription-db
+    username: postgres
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_files: false
+      hibernate.format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    show-sql: true
+
+  jackson:
+    default-property-inclusion: NON_NULL
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+
+rabbitmq:
+  subscriptions:
+    queue: SUBSCRIPTION_Q
+
+server:
+  port: 8089
+
