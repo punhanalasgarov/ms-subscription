@@ -2,7 +2,7 @@ package com.ingress.ms.subscription.controller
 
 import com.ingress.ms.subscription.model.enums.SubscriptionType
 import com.ingress.ms.subscription.model.reuqest.CreateSubscriptionRequestDto
-import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatus
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import com.ingress.ms.subscription.exception.GeneralExceptionHandler
 import com.ingress.ms.subscription.service.SubscriptionService

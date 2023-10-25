@@ -18,7 +18,7 @@ import static com.ingress.ms.subscription.model.enums.SubscriptionType.WEEKLY
 @TestPropertySource("/application.yml")
 class SubscriptionServiceTest extends Specification {
     @Value('${rabbitmq.subscriptions.queue}')
-    String queueName;
+    String queueName
 
     EnhancedRandom random = EnhancedRandomBuilder. aNewEnhancedRandom()
     SubscriptionRepository subscriptionRepository
