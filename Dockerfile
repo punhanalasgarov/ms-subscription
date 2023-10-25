@@ -1,13 +1,12 @@
 FROM openjdk:17-jdk-slim AS build
+WORKDIR /app
 
-COPY pom.xml mvnw ./
-COPY .mvn .mvn
-RUN ./mvnw dependency:resolve
+COPY build.gradle settings.gradle /app/
+COPY gradle /app/gradle
+COPY src /app/src
 
-COPY src src
-RUN ./mvnw package
-
+RUN ./gradlew build
 FROM openjdk:17-jdk-slim
-WORKDIR open-weather
-COPY --from=build target/*.jar exchange-rate-service.jar
+WORKDIR /app
+COPY --from=build /app/build/libs/*.jar ms-subscription.jar
 ENTRYPOINT ["java", "-jar", "ms-subscription.jar"]

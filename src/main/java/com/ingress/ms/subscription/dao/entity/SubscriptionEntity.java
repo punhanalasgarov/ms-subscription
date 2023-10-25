@@ -20,6 +20,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Builder
 @Table(name = "subscriptions")
 @NoArgsConstructor
+@ToString
 public class SubscriptionEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)

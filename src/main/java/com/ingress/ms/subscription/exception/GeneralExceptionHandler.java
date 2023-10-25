@@ -20,10 +20,4 @@ public class GeneralExceptionHandler {
         return new ErrorResponse(UNEXPECTED_ERROR.getCode(), UNEXPECTED_ERROR.getDescription());
     }
 
-    @ExceptionHandler(NotFoundException.class)
-    @ResponseStatus(NOT_FOUND)
-    public ErrorResponse handle(NotFoundException e){
-        log.error("NotFoundException ", e);
-        return new ErrorResponse(SUBSCRIPTION_NOT_FOUND_EXCEPTION.getCode(), e.getMessage());
-    }
 }

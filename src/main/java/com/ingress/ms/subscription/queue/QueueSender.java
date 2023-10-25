@@ -15,7 +15,7 @@ public class QueueSender {
     private final ObjectMapper objectMapper;
 
     @SneakyThrows
-    public <T> void sendToQueue(String queue, T t){
-        amqpTemplate.convertAndSend(queue, objectMapper.writeValueAsString(t));
+    public <T> void sendToQueue(String queue, T data){
+        amqpTemplate.convertAndSend(queue, objectMapper.writeValueAsString(data));
     }
 }

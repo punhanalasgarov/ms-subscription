@@ -1,17 +1,17 @@
 package com.ingress.ms.subscription.model.queue;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.ingress.ms.subscription.model.enums.SubscriptionStatus;
+import com.ingress.ms.subscription.model.enums.SubscriptionType;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class SubscriptionQueueDto {
     private Long userId;
     private Long productId;
-    private String subscriptionType;
-    private String subscriptionStatus;
+    private SubscriptionType subscriptionType;
+    private SubscriptionStatus subscriptionStatus;
 }

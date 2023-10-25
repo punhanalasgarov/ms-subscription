@@ -9,14 +9,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-@Log
 public class SchedulerService {
 
     private final SubscriptionService subscriptionService;
 
     @Scheduled(fixedDelayString = "PT1M")
-    @SchedulerLock(name = "subscriptionsStatusChange", lockAtLeastFor = "PT1M", lockAtMostFor = "PT5M")
-    public void subscriptionsStatusCheck(){
+    @SchedulerLock(name = "subscriptionsStatusChange", lockAtLeastFor = "PT1H", lockAtMostFor = "PT5H")
+    public void subscriptionsStatusChange(){
         subscriptionService.subscriptionsStatusChange();
     }
 }

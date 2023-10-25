@@ -24,11 +24,5 @@ databaseChangeLog:
               - column:
                   name: locked_by
                   type: varchar(255)
-              - createIndex:
-                  indexName: idx_shedlock_name
-                  tableName: shedlock
-                  columns:
-                    - column:
-                        name: name
 
 

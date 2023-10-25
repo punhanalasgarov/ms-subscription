@@ -25,14 +25,21 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: type
-                  type: varchar(256)
+                  type: varchar(16)
                   constraints:
                     nullable: false
               - column:
                   name: status
-                  type: varchar(256)
+                  type: varchar(16)
                   constraints:
                     nullable: false
+              - column:
+                  name: expire_date
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: Last update of record
               - column:
                   name: create_date
                   type: timestamp

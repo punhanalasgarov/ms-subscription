@@ -1,19 +1,13 @@
 package com.ingress.ms.subscription.model.enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum ErrorCode {
-    UNEXPECTED_ERROR("ERROR_1", "Exception occurred"),
-
-    SUBSCRIPTION_NOT_FOUND_EXCEPTION("ERROR_2", "Subscription could not found");
+    UNEXPECTED_ERROR("UNEXPECTED_ERROR", "Exception occurred");
 
     private final String code;
     private final String description;
-
-    ErrorCode(String code, String description) {
-        this.code = code;
-        this.description = description;
-    }
-
 }
